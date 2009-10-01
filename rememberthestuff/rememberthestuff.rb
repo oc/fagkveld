@@ -2,7 +2,6 @@ require 'rubygems'
 require 'sinatra'
 require 'dm-core'
 require 'haml'
-require 'sass'
 
 # Setup DataMapper to use appengine datastore
 DataMapper.setup(:default, "appengine://auto")
@@ -55,11 +54,6 @@ get '/:list/:item' do
   item.got_at = DateTime.now
   item.save
   redirect "/#{params[:list]}"
-end
-
-get '/stylesheet.css' do
-  content_type 'text/css', :charset => 'utf-8'  
-  sass :stylesheet
 end
 
 def linkify(url, text)
