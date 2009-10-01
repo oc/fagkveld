@@ -1,0 +1,12 @@
+!!! struct
+%html
+  %head
+    -title= title
+    %link{ :href => '/stylesheet.css', :media => 'screen', :rel => 'stylesheet', :type=>'text/css' }
+  %body
+    %div#logo
+      %img{ :src => '/images/bekk.gif' }
+    %div#content
+      %div.wrapper= yield
+    %div#footer
+      %p.small Copyright (c) Ole Christian Rynning - Creative Commons Attribute 3.0
