@@ -1,7 +1,6 @@
 require 'rubygems' 
 require 'sinatra'
 require 'dm-core'
-require 'sass'
 
 # Setup DataMapper to use appengine datastore
 DataMapper.setup(:default, "appengine://auto")
@@ -11,7 +10,6 @@ class List
   property :id, Serial
   property :name, String
   property :due_at, DateTime
-  
 end
 
 get '/' do
@@ -24,11 +22,6 @@ post '/' do
   list = List.create(:name => params[:name],
     :due_at => DateTime.new(params[:year].to_i, params[:month].to_i, params[:day].to_i, params[:hour].to_i, params[:min].to_i))
   redirect '/'
-end
-
-get '/stylesheet.css' do
-  content_type 'text/css', :charset => 'utf-8'  
-  sass :stylesheet
 end
 
 def linkify(url, text)
