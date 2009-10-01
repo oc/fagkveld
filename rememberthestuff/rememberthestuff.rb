@@ -9,7 +9,7 @@ DataMapper.setup(:default, "appengine://auto")
 
 get '/' do
   @title = "Remember the stuff!"
-  erb :index
+  haml :index
 end
 
 get '/stylesheet.css' do
