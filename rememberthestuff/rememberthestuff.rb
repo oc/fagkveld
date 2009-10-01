@@ -3,6 +3,7 @@ require 'sinatra'
 require 'dm-core'
 require 'haml'
 require 'sass'
+require 'appengine-apis/users'
 
 # Setup DataMapper to use appengine datastore
 DataMapper.setup(:default, "appengine://auto")
@@ -22,7 +23,14 @@ get '/' do
   erb :list
 end
 
+get '/logout' do
+  redirect AppEngine::Users.create_logout_url('/')
+end
+
 post '/' do
+  @user = AppEngine::Users.current_user   
+  redirect AppEngine::Users.create_login_url(request.url) unless @user
+  
   list = List.create(:name => params[:name],
     :due_at => DateTime.new(params[:year].to_i, params[:month].to_i, params[:day].to_i, params[:hour].to_i, params[:min].to_i))
   redirect '/'
