@@ -23,8 +23,7 @@ end
 
 get '/stylesheet.css' do
   content_type 'text/css', :charset => 'utf-8'  
-  #sass :stylesheet
-  ""
+  sass :stylesheet
 end
 
 helpers do
