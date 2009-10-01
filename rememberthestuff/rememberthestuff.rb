@@ -1,7 +1,6 @@
 require 'rubygems' 
 require 'sinatra'
 require 'dm-core'
-require 'haml'
 require 'sass'
 
 # Setup DataMapper to use appengine datastore
@@ -9,7 +8,7 @@ DataMapper.setup(:default, "appengine://auto")
 
 get '/' do
   @title = "Remember the stuff!"
-  haml :index
+  erb :index
 end
 
 get '/stylesheet.css' do

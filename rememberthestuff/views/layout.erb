@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title><%= @title || "Remember the Stuff!" %></title>
+  <link href="/stylesheet.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="page">
+    <div id="logo"><img src="/images/bekk.gif" alt="BEKK"/></div>
+    <div class="wrapper">      
+      <%= yield %>      
+    </div>
+    <div id="footer">
+      <p class="small">Copyright (c) Ole Christian Rynning - Creative Commons Attribute 3.0
+    </div>
+  </div>
+</body>
+  

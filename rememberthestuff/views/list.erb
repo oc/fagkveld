@@ -1,0 +1,5 @@
+<ul>
+  <% @lists.each do |list| %>
+    <li><%= link_to list.id, list.name %></li>
+  <% end %>
+</ul>
