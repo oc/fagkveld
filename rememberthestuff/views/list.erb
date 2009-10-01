@@ -1,9 +1,11 @@
-<h1><%= @title %></h1>
+<h1><%=@title%></h1>
+
 <ul>
   <% @lists.each do |list| %>
-    <li><%= link_to list.id, list.name %></li>
+  <li><%= link_to list.id, list.name %></li>
   <% end %>
 </ul>
+
 
 <h2>Create List of Stuff</h2>
 <form method='post'>
