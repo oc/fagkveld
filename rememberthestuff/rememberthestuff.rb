@@ -7,10 +7,6 @@ get '/' do
   erb :index
 end
 
-get '/style.css' do
-  ""
-end
-
 helpers do
   include Rack::Utils
   alias_method :h, :escape_html
