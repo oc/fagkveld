@@ -1,7 +1,6 @@
 require 'rubygems' 
 require 'sinatra'
 require 'dm-core'
-require 'haml'
 
 # Setup DataMapper to use appengine datastore
 DataMapper.setup(:default, "appengine://auto")
