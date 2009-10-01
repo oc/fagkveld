@@ -1,0 +1,67 @@
+body { 
+  background-color: #0c0703; 
+  background-image: url('/images/background.jpg'); 
+  background-repeat: repeat-x; 
+  background-position: top left; 
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: 0.69em; 
+  color: #261c02; 
+} 
+#page { 
+  background-color: black; 
+  width: 640px;
+  margin-left: 300px; 
+  padding: 0 10px 10px 10px; 
+} 
+#page .logo { 
+  background-color: #0c0703; 
+  padding: 0;
+  margin: 0; 
+} 
+
+#page .wrapper { 
+  background-color: white; 
+  padding: 10px 20px 20px 20px; 
+} 
+
+h1, h2, h3, h4 { 
+  font-family: Georgia, Times New Roman, Serif; 
+  font-weight: normal; 
+  line-height: 1.1em; 
+} 
+
+h1 { font-size: 320%; } 
+h2 { font-size: 200%; } 
+h3 { font-size: 140%; color: #847363; } 
+h4 { font-size: 100%; color: #847363; line-height: 1.1em; } 
+a { color: #019ab6; text-decoration: none; } 
+a:hover { color: #f04e52; } 
+ol { margin: 0 0 0 2em; } 
+ol li { margin-bottom: 1em; } 
+ul { list-style: none; } 
+input { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 1em; color: #261c02; } 
+input .text { 
+  background-image: url(/images/bkg_textInput.gif); 
+  background-repeat: repeat-x; 
+  background-position: top left; 
+  border-top: 1px solid #8d7c55; 
+  border-bottom: 1px solid #d7cfbd; 
+  border-right: 1px solid #d7cfbd; 
+  padding: 3px 5px 3px 5px; 
+  background-color: #eeebe4; 
+  margin-right: 2ex; } 
+
+input .button { 
+  border: 1px solid #c8c2b7; 
+  color: #847363; } 
+
+.ingress { 
+  font-size: 180%; 
+  line-height: 120%; 
+  font-family: Georgia, Times New Roman, Serif; 
+  font-weight: 100; 
+  margin-bottom: 1em; 
+  color: #847363; } 
+  
+#footer { background-color: white; } 
+.small { font-size: 80%; padding: 2px; text-align: center; } 

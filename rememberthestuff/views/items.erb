@@ -1,0 +1,26 @@
+<h1><%= @list.name %></h1>
+
+<% unless @needed_items.empty? %>
+<h2>Get this stuff!</h2>
+<ul>
+  <% @needed_items.each do |item| %>
+    <li><%= item.description %><span> -> <%= link_to "#{@list.id}/#{item.id}", "Got it!" %></span></li>
+  <% end %>
+</ul>
+<% end %>
+
+<% unless @got_items.empty? %>
+<h2>Already got this stuff!</h2>
+<ul>
+  <% @got_items.each do |item| %>
+    <li><%= item.description %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<h3>Add some stuff</h3>
+<form method='post'>
+  <label for='description'>Description</label>
+  <input class='text' type='text' name='description' id='description'/>
+  <input type='submit' value='Add'/>
+</form>
