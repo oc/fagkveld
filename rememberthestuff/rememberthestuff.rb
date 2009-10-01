@@ -4,6 +4,7 @@ require 'dm-core'
 require 'haml'
 require 'sass'
 require 'appengine-apis/users'
+require 'appengine-apis/mail'
 
 # Setup DataMapper to use appengine datastore
 DataMapper.setup(:default, "appengine://auto")
@@ -27,12 +28,20 @@ get '/logout' do
   redirect AppEngine::Users.create_logout_url('/')
 end
 
+def create_list_mail(to, name)
+  subject = "Ny oppgave! #{name}"
+  body = subject + "\nHilsen OC"
+  AppEngine::Mail.send("oc@rynning.no", to, subject, body)
+end
+
 post '/' do
   @user = AppEngine::Users.current_user
   redirect AppEngine::Users.create_login_url(request.url) unless @user
 
   list = List.create(:name => params[:name],
     :due_at => DateTime.new(params[:year].to_i, params[:month].to_i, params[:day].to_i, params[:hour].to_i, params[:min].to_i))
+    
+  create_list_mail(@user.email, params[:name])
   redirect '/'
 end
 
