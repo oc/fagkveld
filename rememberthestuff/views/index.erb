@@ -1,2 +1,41 @@
 <h1><%= @title %></h1>
-<p>Lorem Ipsum dot</p>
+<ul>
+  <% @lists.each do |list| %>
+    <li><%= link_to list.id, list.name %></li>
+  <% end %>
+</ul>
+
+<h2>Create List of Stuff</h2>
+<form method='post'>
+  <label for='name'>Name</label>
+  <input type='text' name='name' id='name'/>
+  <br/>
+  <label for='year'>Due</label>
+  <select name='year' id='year'>
+    <option value='2009'>2009</option>
+    <option value='2010'>2010</option>
+    <option value='2011'>2011</option>
+  </select>
+  <select name='month' id='month'>
+    <% (1..12).each do |month| %>
+    <option value='<%= month %>'><%= month %></option>
+    <% end %>
+  </select>
+  <select name='day' id='day'>
+    <% (1..31).each do |day| %>
+    <option value='<%= day %>'><%= day %></option>
+    <% end %>
+  </select>
+  <select name='hour' id='hour'>
+    <% (0..23).each do |hour| %>
+    <option value='<%= hour %>'><%= hour %></option>
+    <% end %>
+  </select>
+  <select name='min' id='min'>
+    <option value='0'>0</option>    
+    <option value='15'>15</option>
+    <option value='30'>30</option>    
+    <option value='45'>45</option>    
+  </select>
+  <input type='submit' value='Do it!'>
+</form>

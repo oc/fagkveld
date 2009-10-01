@@ -6,8 +6,18 @@ require 'sass'
 # Setup DataMapper to use appengine datastore
 DataMapper.setup(:default, "appengine://auto")
 
+class List
+  include DataMapper::Resource
+    
+  property :id, Serial
+  property :name, String
+  property :due_at, DateTime
+  
+end
+
 get '/' do
   @title = "Remember the stuff!"
+  @lists = List.all
   erb :index
 end
 
@@ -24,3 +34,15 @@ helpers do
   end
 end
 
+# Reload during dev ;)
+class Sinatra::Reloader < Rack::Reloader 
+   def safe_load(file, mtime, stderr = $stderr) 
+     ::Sinatra::Application.reset!
+     stderr.puts "#{self.class}: reseting routes" 
+     super 
+   end 
+end
+
+configure :development do
+  use Sinatra::Reloader
+end
