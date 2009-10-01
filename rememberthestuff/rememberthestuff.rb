@@ -57,11 +57,6 @@ get '/:list/:item' do
   redirect "/#{params[:list]}"
 end
 
-get '/stylesheet.css' do
-  content_type 'text/css', :charset => 'utf-8'  
-  sass :stylesheet
-end
-
 def linkify(url, text)
   %(<a href="#{url}" alt="#{text}">#{text}</a>)
 end

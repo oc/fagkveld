@@ -29,13 +29,13 @@ h1, h2, h3, h4 {
   font-weight: normal; 
   line-height: 1.1em; 
 } 
-
 h1 { font-size: 320%; } 
 h2 { font-size: 200%; } 
 h3 { font-size: 140%; color: #847363; } 
 h4 { font-size: 100%; color: #847363; line-height: 1.1em; } 
 a { color: #019ab6; text-decoration: none; } 
 a:hover { color: #f04e52; } 
+img { border: none; }
 ol { margin: 0 0 0 2em; } 
 ol li { margin-bottom: 1em; } 
 ul { list-style: none; } 

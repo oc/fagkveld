@@ -1,7 +1,7 @@
 <h1><%= @list.name %></h1>
 
 <% unless @needed_items.empty? %>
-<h2>Get this stuff!</h2>
+<h2>Get this stuff within <%= @list.due_at.strftime("%y-%m-%d@%H:%m") %></h2>
 <ul>
   <% @needed_items.each do |item| %>
     <li><%= item.description %><span> -> <%= link_to "#{@list.id}/#{item.id}", "Got it!" %></span></li>
